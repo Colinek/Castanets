@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Castanets</title>
+
+  <style media="screen">
+    #image1 {
+      height: 250px;
+
+    }
+
+    #image2 {
+      height: 250px;
+
+      display: none;
+    }
+
+    #castanets {
+      text-align: center;
+      margin: auto;
+      width: 50%;
+      border: 3px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      display: block;
+    }
+
+    h1 {
+      text-align: center;
+      border: 3px solid black;
+      border-radius: 10px;
+      margin: 0 auto;
+      padding: 10px;
+      width: 50%;
+      background-color: #444;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Castanets</h1>
+  <div id="castanets">
+    <img id="image1" src="castclose.png" width="170px" height="150px">
+    <img id="image2" src="castopen.png" width="170px" height="150px" style="display:none">
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(function() {
+        // toggle the images
+        $("img").click(function() {
+          $("img").toggle()
+        })
+      });
+
+      // play the first sound
+      $("#image1").click(() => new Audio("roll.mp3").play());
+      // play the second sound
+      $("#image2").click(() => new Audio("click.mp3").play());
+
+    });
+  </script>
+
+</body>
+
+</html>
